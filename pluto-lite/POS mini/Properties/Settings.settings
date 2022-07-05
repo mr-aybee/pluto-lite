@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="POS_mini.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="smsUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">923017340808</Value>
+    </Setting>
+    <Setting Name="smsPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">03001225335</Value>
+    </Setting>
+    <Setting Name="smsBrandName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BrandName</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

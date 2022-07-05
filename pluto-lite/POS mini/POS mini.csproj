@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CFF148B-355C-4607-B196-E304E52EDEA3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POS_mini</RootNamespace>
+    <AssemblyName>POS mini</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>POS_mini.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon256px.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.4.4\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zen.Barcode.Rendering.Framework.3.1.10729.1\lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\DBCache.cs" />
+    <Compile Include="App_Code\Extensions.cs" />
+    <Compile Include="App_Code\ReportingModels.cs" />
+    <Compile Include="App_Code\XML.cs" />
+    <Compile Include="CustomControls\Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Constants.cs" />
+    <Compile Include="CustomControls\CutomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CutomMessageBox.Designer.cs">
+      <DependentUpon>CutomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CPayRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CPayRecord.Designer.cs">
+      <DependentUpon>CPayRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CustomerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CustomerControl.Designer.cs">
+      <DependentUpon>CustomerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CustomerHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CustomerHome.Designer.cs">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CustomerPayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\CustomerControls\CustomerPayControl.Designer.cs">
+      <DependentUpon>CustomerPayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\DashboardSettings\DashboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\DashboardSettings\DashboardControl.Designer.cs">
+      <DependentUpon>DashboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoiceControl.Designer.cs">
+      <DependentUpon>InvoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoiceHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoiceHome.Designer.cs">
+      <DependentUpon>InvoiceHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoicesReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoicesReportControl.Designer.cs">
+      <DependentUpon>InvoicesReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoiceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\InvoiceControls\InvoiceView.Designer.cs">
+      <DependentUpon>InvoiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductControl.Designer.cs">
+      <DependentUpon>ProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductReportControl.Designer.cs">
+      <DependentUpon>ProductReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductTypeControl.Designer.cs">
+      <DependentUpon>ProductTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductsHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\ProductControls\ProductsHome.Designer.cs">
+      <DependentUpon>ProductsHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\ExpenseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\ExpenseControl.Designer.cs">
+      <DependentUpon>ExpenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleCreateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleCreateControl.Designer.cs">
+      <DependentUpon>SaleCreateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleEditControl.Designer.cs">
+      <DependentUpon>SaleEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleHome.Designer.cs">
+      <DependentUpon>SaleHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleReport.Designer.cs">
+      <DependentUpon>SaleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleSMSControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SaleControls\SaleSMSControl.Designer.cs">
+      <DependentUpon>SaleSMSControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsBackupAndRestoreControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsBackupAndRestoreControl.Designer.cs">
+      <DependentUpon>SettingsBackupAndRestoreControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsBillControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsBillControl.Designer.cs">
+      <DependentUpon>SettingsBillControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsHome.Designer.cs">
+      <DependentUpon>SettingsHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsUpdateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsUpdateControl.Designer.cs">
+      <DependentUpon>SettingsUpdateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsUsersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\SettingsControls\SettingsUsersControl.Designer.cs">
+      <DependentUpon>SettingsUsersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VendorPayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VendorPayControl.Designer.cs">
+      <DependentUpon>VendorPayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VendorsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VendorsControl.Designer.cs">
+      <DependentUpon>VendorsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VendorsHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VendorsHome.Designer.cs">
+      <DependentUpon>VendorsHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VPayRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormControls\Vendors\VPayRecord.Designer.cs">
+      <DependentUpon>VPayRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910121328450_initial.cs" />
+    <Compile Include="Migrations\201910121328450_initial.Designer.cs">
+      <DependentUpon>201910121328450_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009150706353_courier_v1.cs" />
+    <Compile Include="Migrations\202009150706353_courier_v1.Designer.cs">
+      <DependentUpon>202009150706353_courier_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DBEntites.cs" />
+    <Compile Include="Models\OtherModels.cs" />
+    <Compile Include="Models\DBTables.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="CustomControls\Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CutomMessageBox.resx">
+      <DependentUpon>CutomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\CustomerControls\CPayRecord.resx">
+      <DependentUpon>CPayRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\CustomerControls\CustomerControl.resx">
+      <DependentUpon>CustomerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\CustomerControls\CustomerHome.resx">
+      <DependentUpon>CustomerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\CustomerControls\CustomerPayControl.resx">
+      <DependentUpon>CustomerPayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\DashboardSettings\DashboardControl.resx">
+      <DependentUpon>DashboardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\InvoiceControls\InvoiceControl.resx">
+      <DependentUpon>InvoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\InvoiceControls\InvoiceHome.resx">
+      <DependentUpon>InvoiceHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\InvoiceControls\InvoicesReportControl.resx">
+      <DependentUpon>InvoicesReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\InvoiceControls\InvoiceView.resx">
+      <DependentUpon>InvoiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\ProductControls\ProductControl.resx">
+      <DependentUpon>ProductControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\ProductControls\ProductReportControl.resx">
+      <DependentUpon>ProductReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\ProductControls\ProductsHome.resx">
+      <DependentUpon>ProductsHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\ProductControls\ProductTypeControl.resx">
+      <DependentUpon>ProductTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SaleControls\ExpenseControl.resx">
+      <DependentUpon>ExpenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SaleControls\SaleCreateControl.resx">
+      <DependentUpon>SaleCreateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SaleControls\SaleEditControl.resx">
+      <DependentUpon>SaleEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SaleControls\SaleHome.resx">
+      <DependentUpon>SaleHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SaleControls\SaleReport.resx">
+      <DependentUpon>SaleReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SaleControls\SaleSMSControl.resx">
+      <DependentUpon>SaleSMSControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SettingsControls\SettingsBackupAndRestoreControl.resx">
+      <DependentUpon>SettingsBackupAndRestoreControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SettingsControls\SettingsBillControl.resx">
+      <DependentUpon>SettingsBillControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SettingsControls\SettingsHome.resx">
+      <DependentUpon>SettingsHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SettingsControls\SettingsUpdateControl.resx">
+      <DependentUpon>SettingsUpdateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\SettingsControls\SettingsUsersControl.resx">
+      <DependentUpon>SettingsUsersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\Vendors\VendorPayControl.resx">
+      <DependentUpon>VendorPayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\Vendors\VendorsControl.resx">
+      <DependentUpon>VendorsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\Vendors\VendorsHome.resx">
+      <DependentUpon>VendorsHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControls\Vendors\VPayRecord.resx">
+      <DependentUpon>VPayRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910121328450_initial.resx">
+      <DependentUpon>201910121328450_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009150706353_courier_v1.resx">
+      <DependentUpon>202009150706353_courier_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reportings\BarcodeSlip.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\CustomerPaySlip.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\CustomerReportFile.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\InvoiceReportFile.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\InvoiceSlip.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\SaleSheet.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\ProductReportFile.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\SaleSlip.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\VendorPaySlip.rdlc" />
+    <EmbeddedResource Include="Reports\Reportings\VendorReportFile.rdlc" />
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.AllInvoicesRpt.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.InvoicesDetailsRpt.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.ItemsListRpt.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.MultiSaleRecord.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.PayRecord.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.PayRpt.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.ProductsInventoryRpt.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.SaleDetailRpt.datasource" />
+    <None Include="Properties\DataSources\POS_mini.App_Code.SInvoiceRpt.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="favicon256px.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\DB.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="SMS.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\errorImage.png" />
+    <None Include="Resources\Updater.zip" />
+    <None Include="Resources\warningIcon.png" />
+    <None Include="Resources\successIcon.png" />
+    <None Include="Resources\icons8-minimize-window-50 %281%29.png" />
+    <None Include="Resources\icons8-minimize-window-64.png" />
+    <None Include="Resources\icons8-full-screen-64.png" />
+    <None Include="Resources\icons8-normal-screen-64.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\maximiseScreen.png" />
+    <None Include="Resources\NormalScreen.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\plutoWhiteLogo.png" />
+    <None Include="Resources\plutoLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

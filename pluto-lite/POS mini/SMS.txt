@@ -1,0 +1,12 @@
+﻿Dear {CUSTOMER-NAME},
+Your tracking ID is:
+{TRACKING-ID}
+Your sale ID is:
+{SALE-ID}
+By Trax Courier.
+Your order will be dispatched tomorrow from lahore 
+and will be delivered within 2-3 working days.
+Your COD amount is Rs. {TOTAL-AMOUNT}
+Thank You For Choosing Baleen Fabrics!
+Regards,
+Baleek Fabrics
