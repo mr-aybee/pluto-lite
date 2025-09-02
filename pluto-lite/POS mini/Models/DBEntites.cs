@@ -7,10 +7,12 @@ namespace POS_mini.Models
     {
         public const string conStringHome = @"Data Source=D:\Repos\pluto-lite\pluto-lite\PlutoDB.sdf;Password=malik@1234";
         public const string conStringDeploy = @"Data Source=|DataDirectory|\PlutoDB.sdf;Password=malik@1234";
+        
         public static string conString
         {
             get { return conStringDeploy; }
         }
+
         public DBEntities() : base(new SqlCeConnection(conString), contextOwnsConnection: true)
         { }
 
